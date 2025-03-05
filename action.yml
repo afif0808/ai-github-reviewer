@@ -8,25 +8,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    # Step 1: Check if Python is already set up. If not, set it up.
-    - name: Check if Python is set up
-      shell: bash
-      id: check-python
-      run: |
-        if ! command -v python &> /dev/null; then
-          echo "Python is not installed"
-          echo "python_setup=false" >> $GITHUB_ENV
-        else
-          echo "Python is already installed"
-          echo "python_setup=true" >> $GITHUB_ENV
-        fi
-
-    # Step 2: Set up Python if not already set up
-    - name: Set up Python
-      if: env.python_setup != 'true'
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ inputs.python_version }}
 
     # Step 3: Install dependencies (optional)
     - name: Install dependencies
