@@ -32,4 +32,6 @@ runs:
     # Step 6: Run the Python script
     - name: Run Python script
       shell: bash
-      run: python3 ${{ github.action_path }}/ai-reviewer.py
+      run: | 
+        pip3 install langchain_ollama
+        python3 ${{ github.action_path }}/ai-reviewer.py
