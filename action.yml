@@ -26,5 +26,4 @@ runs:
       run: | 
         cd ${{ github.action_path }}
         pip3 install requirements.txt
-        pip3 install langchain_ollama
         python3 ai-reviewer.py
