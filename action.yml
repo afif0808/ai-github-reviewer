@@ -11,7 +11,8 @@ runs:
     - name : Checkout
       uses: actions/checkout@v4
       with:
-        repository: ${{ github.repository }}
+        repository: afif0808/ai-github-reviewer # Replace with your custom action repo
+        path: custom-action-repo
     
 
     # Step 3: Install dependencies (optional)
