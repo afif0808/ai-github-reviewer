@@ -39,6 +39,5 @@ runs:
     # Step 6: Run the Python script
     - name: Run Python script
       shell: bash
-      run: |
-        python3 main.py 
+      run: ${{ github.action_path }}/main.py 
    
