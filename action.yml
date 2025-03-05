@@ -8,6 +8,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name : Checkout
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository }}
+    
 
     # Step 3: Install dependencies (optional)
     - name: Install dependencies
