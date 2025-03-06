@@ -19,6 +19,7 @@ runs:
         GITHUB_TOKEN=${{ inputs.github_token }}
         echo "GITHUB_REPO=$GITHUB_REPO" >> $GITHUB_ENV
         echo "GITHUB_PR_NUMBER=$GITHUB_PR_NUMBER" >> $GITHUB_ENV
+        echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
 
         echo "Github Repo: $GITHUB_REPO"
         echo "Gituh PR Number: $GITHUB_PR_NUMBER"
