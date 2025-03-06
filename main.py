@@ -8,10 +8,6 @@ github_repo = os.getenv('GITHUB_REPO', 'default-repo-name')
 github_pr_number = os.getenv('GITHUB_PR_NUMBER', 'no-pr')
 github_token = os.getenv('GITHUB_TOKEN', 'no-token')
 
-github_token = "ganti token lu"
-github_repo = "machtwatch/test-ai-reviewer"
-github_pr_number = 1
-
 # print(f"Repository Name: {repo_name}")
 # print(f"Pull Request Number: {pr_number}")
 

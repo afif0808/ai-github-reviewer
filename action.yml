@@ -5,6 +5,9 @@ inputs:
     description: 'The Python version to use'
     required: false
     default: '3.x'
+  github_token:
+    description: ""
+    required: true
 runs:
   using: 'composite'
   steps:
@@ -13,7 +16,7 @@ runs:
       run: |
         GITHUB_REPO=$GITHUB_REPOSITORY
         GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}
-
+        GITHUB_TOKEN=${{ inputs.github_token }}
         echo "GITHUB_REPO=$GITHUB_REPO" >> $GITHUB_ENV
         echo "GITHUB_PR_NUMBER=$GITHUB_PR_NUMBER" >> $GITHUB_ENV
 

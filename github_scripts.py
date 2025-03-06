@@ -57,15 +57,8 @@ def extract_pr_diff_blocks(file_diff):
     pattern = r"^@@\s-\d+,\d+\s[-+]?\d+,\d+\s@@.*"
     regex = re.compile(pattern, re.MULTILINE)
     patch = regex.sub("<BLOCK_DIFF>", patch)
-    # print(patch)
     diffs = patch.split("<BLOCK_DIFF>")
     diffs.pop(0)
-    print(file_diff["filename"])
-    print(diffs)
-    print(len(diffs))
-    print(len(blocks))
-    
-    # print(len(blocks),len(diffs))
     for i in range(len(blocks)):
         blocks[i]['diff'] = diffs[i]
         
@@ -91,11 +84,12 @@ def review_comments(token: str, github_repo: str, github_pr_num: int, filename: 
     repo = g.get_repo(github_repo)
     pr = repo.get_pull(github_pr_num)
     
-    print(line_number)
-    print(pr.get_commits()[0])
+    
     
     # Create a review comment
-    commit = pr.get_commits()[0]  # Get latest commit
+    commits = pr.get_commits()
+    commit = list(commits)[-1]  # Get the last commit
+
     pr.create_review_comment(
         body=comment_body,
         commit=commit,
