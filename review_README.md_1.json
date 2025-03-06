@@ -1,0 +1,5 @@
+{
+    "starting_line": 1,
+    "file": "README.md",
+    "code": "Go skeleton project. Supports REST, GraphQL, and RabbitMQ messaging out of the\n box."
+}

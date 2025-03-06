@@ -1,0 +1,5 @@
+{
+    "starting_line": 4,
+    "file": ".github/workflows/ai-review.yaml",
+    "code": "types: [opened, edited, synchronize]\n jobs:\n   auto-review:\n     steps:"
+}

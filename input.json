@@ -1,5 +1,5 @@
 {
-    "file":"main.go",
-    "starting_line":200,
-    "code":"var err error\na := 1 \n<CHANGED_LINE>a, err = strconv.Atoi(\"2\")\n<CHANGED_LINE>b := \"Tes\""
+  "starting_line": 4,
+  "file": ".github/workflows/ai-review.yaml",
+  "code": "types: [opened, edited, synchronize]\n jobs:\n   auto-review:\n<CHANGED_LINE>    runs-on: ubuntu-latest\n     steps:\n<CHANGED_LINE>    #   - uses: afif0808/ai-github-reviewer@v0.1.17\n<CHANGED_LINE>      - name: Comment\n<CHANGED_LINE>        run: |\n<CHANGED_LINE>          echo \"TOKEN : ${{secrets.GITHUB_TOKEN}}\""
 }
