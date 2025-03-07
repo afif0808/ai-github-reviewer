@@ -5,3 +5,4 @@ langchain_community
 langchain-ollama
 urllib3==1.26.6
 langchain-chroma
+PyGitHub==2.6.1
