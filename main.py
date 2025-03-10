@@ -5,11 +5,10 @@ import re
 import json
 
 github_repo = os.getenv('GITHUB_REPO', 'default-repo-name')
-github_pr_number = os.getenv('GITHUB_PR_NUMBER', 'no-pr')
+github_pr_number = int(os.getenv('GITHUB_PR_NUMBER', '0'))
 github_token = os.getenv('GITHUB_TOKEN', 'no-token')
 
-# print(f"Repository Name: {repo_name}")
-# print(f"Pull Request Number: {pr_number}")
+
 
 def remove_deleted_line_diff(diff_str):
     pattern = r"^\-.*\n?"  # Matches the whole line including newline if it starts with "prefix_"
