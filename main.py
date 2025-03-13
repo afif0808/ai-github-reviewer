@@ -43,8 +43,8 @@ for file_diff in pr_file_diffs:
         with open('input.json', 'w') as f:
             json.dump(ai_review_payload, f, indent=2)
         result = ai_reviewer.review_code()
-        reviews = result["reviews"]
-        if reviews == None:
+        reviews = result.get("reviews")
+        if not reviews:
             continue
         for review in reviews:
             github_scripts.review_comments(github_token,github_repo,github_pr_number,review["file_name"],review["line"],review["description"])
